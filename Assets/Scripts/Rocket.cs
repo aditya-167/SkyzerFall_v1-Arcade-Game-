@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -10,6 +8,10 @@ public class Rocket : MonoBehaviour
     
     Rigidbody rigidBody;
     AudioSource audioSource;
+    
+    enum State { Alive, Dying, Transcending};
+
+    State state = State.Alive;
     // Start is called before the first frame update
               
     void Start()
@@ -65,21 +67,34 @@ public class Rocket : MonoBehaviour
     {
         switch (collision.gameObject.tag)
         {
-            case "Friendly":
+            case "Friendy":
                 {
-                    print("OK");
                     break;
                 }
-            case "Fuel":
+            case "Finish":
                 {
-                    print("Fuel");
+                    print("Hit Finish");
+                    state = State.Transcending;
+                    Invoke("LoadNextScene",1f);
                     break;
                 }
             default:
                 {
                     print("Dead");
+                    state = State.Dying;
+                    LoadFirstLevel();
                     break;
                 }
         }
+    }
+
+    private static void LoadFirstLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
