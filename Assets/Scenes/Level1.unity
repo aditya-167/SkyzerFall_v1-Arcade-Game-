@@ -121,6 +121,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &418636641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8410570007507361637, guid: 4c07b0261107ad74587e705f51c066dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5380601448735006035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &418636646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418636641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419f5c23d9afd454e9daaff94c88d15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0, z: 0}
+  period: 2
 --- !u!1001 &1514078313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,21 +483,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 8279329080806754646, guid: 4c07b0261107ad74587e705f51c066dc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0075991717
-      objectReference: {fileID: 0}
-    - target: {fileID: 8279329080806754646, guid: 4c07b0261107ad74587e705f51c066dc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99997115
-      objectReference: {fileID: 0}
-    - target: {fileID: 8279329080806754646, guid: 4c07b0261107ad74587e705f51c066dc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.87100005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c07b0261107ad74587e705f51c066dc, type: 3}
