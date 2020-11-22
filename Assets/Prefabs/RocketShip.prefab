@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddfe68c914067c4d941de69e681b3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 200
-  Throttle: 80
+  rcsThrust: 170
+  Throttle: 18
 --- !u!82 &7011532332680991807
 AudioSource:
   m_ObjectHideFlags: 0
