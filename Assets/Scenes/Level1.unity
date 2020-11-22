@@ -128,11 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5782966720242654347, guid: 07fcd9785ec2f09419455871de70669f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.48
-      objectReference: {fileID: 0}
     - target: {fileID: 8875575728745750876, guid: 07fcd9785ec2f09419455871de70669f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -468,6 +463,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8279329080806754646, guid: 4c07b0261107ad74587e705f51c066dc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0075991717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8279329080806754646, guid: 4c07b0261107ad74587e705f51c066dc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99997115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8279329080806754646, guid: 4c07b0261107ad74587e705f51c066dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.87100005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c07b0261107ad74587e705f51c066dc, type: 3}
