@@ -3,9 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
+    
     [SerializeField] float rcsThrust = 150f;
     [SerializeField] float Throttle = 20f;
-    
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] AudioClip win;
+    [SerializeField] AudioClip die;
+
+    [SerializeField] ParticleSystem mainEngineParticle;
+    [SerializeField] ParticleSystem winParticle;
+    [SerializeField] ParticleSystem dieParticle;
+
+
     Rigidbody rigidBody;
     AudioSource audioSource;
     
@@ -23,11 +32,15 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Thrust();
-        Rotate();
+        if(state == State.Alive)
+        {
+            RespondToThrust();
+            RespondToRotate();
+        }
+        
     }
 
-    private void Rotate()
+    private void RespondToRotate()
     {
         rigidBody.freezeRotation = true;
 
@@ -43,28 +56,38 @@ public class Rocket : MonoBehaviour
         rigidBody.freezeRotation = false;
     }
 
-    private void Thrust()
+    private void RespondToThrust()
     {
 
         float thrustSpeed = Throttle * Time.deltaTime;
         
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up * Throttle);
-            if (audioSource.isPlaying == false)
-            {
-                audioSource.Play();
-            }
+            ApplyThrust();
         }
         else
         {
             audioSource.Stop();
+            mainEngineParticle.Stop();
         }
-        
+
+    }
+
+    private void ApplyThrust()
+    {
+        rigidBody.AddRelativeForce(Vector3.up * Throttle);
+        if (audioSource.isPlaying == false)
+        {
+            audioSource.PlayOneShot(mainEngine);
+            
+        }
+        if(!mainEngineParticle.isPlaying)
+            mainEngineParticle.Play();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (state != State.Alive) { return; }
         switch (collision.gameObject.tag)
         {
             case "Friendy":
@@ -73,22 +96,36 @@ public class Rocket : MonoBehaviour
                 }
             case "Finish":
                 {
-                    print("Hit Finish");
-                    state = State.Transcending;
-                    Invoke("LoadNextScene",1f);
+                    WinSequence();
                     break;
                 }
             default:
                 {
-                    print("Dead");
-                    state = State.Dying;
-                    LoadFirstLevel();
+                    DieSequence();
                     break;
                 }
         }
     }
 
-    private static void LoadFirstLevel()
+    private void DieSequence()
+    {
+        state = State.Dying;
+        audioSource.Stop();
+        audioSource.PlayOneShot(die);
+        dieParticle.Play();
+        Invoke("LoadFirstLevel", 1f);
+    }
+
+    private void WinSequence()
+    {
+        state = State.Transcending;
+        audioSource.Stop();
+        audioSource.PlayOneShot(win);
+        winParticle.Play();
+        Invoke("LoadNextScene", 1f);
+    }
+
+    private void LoadFirstLevel()
     {
         SceneManager.LoadScene(0);
     }

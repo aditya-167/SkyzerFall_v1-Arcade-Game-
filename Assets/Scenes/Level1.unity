@@ -128,13 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1687295438, guid: 07fcd9785ec2f09419455871de70669f, type: 3}
-      propertyPath: Throttle
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687295438, guid: 07fcd9785ec2f09419455871de70669f, type: 3}
-      propertyPath: rcsThrust
-      value: 160
+    - target: {fileID: 5782966720242654347, guid: 07fcd9785ec2f09419455871de70669f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 8875575728745750876, guid: 07fcd9785ec2f09419455871de70669f,
         type: 3}
@@ -190,21 +187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8875575728745750876, guid: 07fcd9785ec2f09419455871de70669f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8875575728745750876, guid: 07fcd9785ec2f09419455871de70669f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8875575728745750876, guid: 07fcd9785ec2f09419455871de70669f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8875575728745750877, guid: 07fcd9785ec2f09419455871de70669f,
         type: 3}
@@ -496,11 +478,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 601706381880810809, guid: 81945d24daee4ef47942f05cdf398903,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 97c0063f1176a0f48850101960827d14, type: 2}
     - target: {fileID: 4057085121583521139, guid: 81945d24daee4ef47942f05cdf398903,
         type: 3}
       propertyPath: m_LocalPosition.x
